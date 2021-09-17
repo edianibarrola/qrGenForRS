@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			qrCode: null,
+			qrText: "https://via.placeholder.com/150?Text=Loading",
 			message: null,
 			demo: [
 				{
@@ -53,6 +54,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.text())
 					.then(result => setStore({ qrCode: result }))
 					.catch(error => console.log("error", error));
+			},
+			setQrText: val => {
+				const store = getStore();
+				setStore({ qrText: val });
 			}
 		}
 	};
