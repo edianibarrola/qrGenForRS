@@ -8,28 +8,31 @@ const Canvas = props => {
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		const context = canvas.getContext("2d");
+		context.canvas.width = "1000";
+		context.canvas.height = "710";
 		//Our first draw
-		context.fillStyle = "#000000";
-		context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+
 		var img1 = new Image();
 		img1.onload = function() {
 			context.drawImage(img1, 0, 0); // Or at whatever offset you like
+			context.font = "50px Lucida";
+			context.fillStyle = "red";
+			context.textAlign = "center";
+			context.fillText("Centered Text", context.canvas.width / 2, 220);
 		};
 		img1.src = "https://res.cloudinary.com/petrep/image/upload/v1631910403/realselfBG_fccsia.png";
 		var img2 = new Image();
 		img2.onload = function() {
-			context.drawImage(img2, 0, 0); // Or at whatever offset you like
+			context.drawImage(img2, 420, 280); // Or at whatever offset you like
 		};
 		img2.src = store.qrText;
 	}, []);
 
 	return (
-		<div
-		// style={{
-		// 	backgroundImage: `url("https://res.cloudinary.com/petrep/image/upload/v1631910403/realselfBG_fccsia.png")`
-		// }}
-		>
-			<canvas ref={canvasRef} {...props} />;
+		<div className="container">
+			<div className="d-flex justify-content-center align-content-center" style={{ background: "black" }}>
+				<canvas width={"1000px"} height={"710px"} ref={canvasRef} {...props} />;
+			</div>
 		</div>
 	);
 };
