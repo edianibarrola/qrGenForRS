@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			qrCode: null,
 			qrText: "https://via.placeholder.com/150?Text=Loading",
+			drName: "Dr Name",
 			message: null,
 			demo: [
 				{
@@ -58,6 +59,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setQrText: val => {
 				const store = getStore();
 				setStore({ qrText: val });
+			},
+			setDrName: val => {
+				const store = getStore();
+				setStore({ drName: val });
 			}
 		}
 	};

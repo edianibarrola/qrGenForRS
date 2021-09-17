@@ -15,15 +15,15 @@ const Canvas = props => {
 		var img1 = new Image();
 		img1.onload = function() {
 			context.drawImage(img1, 0, 0); // Or at whatever offset you like
-			context.font = "50px Lucida";
-			context.fillStyle = "red";
+			context.font = "50px Mulish";
+			context.fillStyle = "black";
 			context.textAlign = "center";
-			context.fillText("Centered Text", context.canvas.width / 2, 220);
+			context.fillText(store.drName, context.canvas.width / 2, 200);
 		};
 		img1.src = "https://res.cloudinary.com/petrep/image/upload/v1631910403/realselfBG_fccsia.png";
 		var img2 = new Image();
 		img2.onload = function() {
-			context.drawImage(img2, 420, 280); // Or at whatever offset you like
+			context.drawImage(img2, 380, 220); // Or at whatever offset you like
 		};
 		img2.src = store.qrText;
 	}, []);

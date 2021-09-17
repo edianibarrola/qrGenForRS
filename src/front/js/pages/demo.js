@@ -8,9 +8,13 @@ import "../../styles/demo.scss";
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 	const [urlText, setUrl] = useState("");
+	const [docName, setDocName] = useState("");
 
 	return (
 		<div className="container">
+			<label htmlFor="">Dr Name: </label>
+			<input type="text" value={docName} onChange={e => setDocName(e.target.value)} />
+			<label htmlFor="URL: ">URL for QR code</label>
 			<input type="text" value={urlText} onChange={e => setUrl(e.target.value)} />
 			<br />
 			<Link to="/test">
@@ -19,6 +23,7 @@ export const Demo = () => {
 						actions.setQrText(
 							`https://api.qrserver.com/v1/create-qr-code/?data=${urlText}&amp;size=100x100urlText`
 						);
+						actions.setDrName(docName);
 					}}>
 					create qr
 				</button>
