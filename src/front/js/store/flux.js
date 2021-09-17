@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			qrCode: null,
 			message: null,
 			demo: [
 				{
@@ -41,6 +42,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			getQr: () => {
+				var requestOptions = {
+					method: "GET",
+					redirect: "follow"
+				};
+
+				fetch("https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100", requestOptions)
+					.then(response => response.text())
+					.then(result => setStore({ qrCode: result }))
+					.catch(error => console.log("error", error));
 			}
 		}
 	};

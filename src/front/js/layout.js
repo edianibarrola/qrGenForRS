@@ -9,6 +9,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import Canvas from "./pages/testing";
 
 //create your first component
 const Layout = () => {
@@ -30,6 +31,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/test">
+							<Canvas />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
