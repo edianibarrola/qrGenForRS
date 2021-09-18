@@ -11,8 +11,8 @@ export const Demo = () => {
 	const [docName, setDocName] = useState("");
 
 	return (
-		<div className="container">
-			<div className="row">
+		<div className="container ">
+			<div className="row ">
 				<h1 className="text-center">realself QR maker</h1>
 				<div className="col-12 d-flex justify-content-center mt-3">
 					<input
