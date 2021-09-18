@@ -12,26 +12,42 @@ export const Demo = () => {
 
 	return (
 		<div className="container">
-			<label htmlFor="">Dr Name: </label>
-			<input type="text" value={docName} onChange={e => setDocName(e.target.value)} />
-			<label htmlFor="URL: ">URL for QR code</label>
-			<input type="text" value={urlText} onChange={e => setUrl(e.target.value)} />
+			<div className="row">
+				<h1 className="text-center">realself QR maker</h1>
+				<div className="col-12 d-flex justify-content-center mt-3">
+					<input
+						placeholder="Dr. Name"
+						type="text"
+						value={docName}
+						onChange={e => setDocName(e.target.value)}
+					/>
+				</div>
+
+				<div className="col-12 d-flex justify-content-center mt-3">
+					<input
+						placeholder="URL for QR code"
+						type="text"
+						value={urlText}
+						onChange={e => setUrl(e.target.value)}
+					/>
+				</div>
+			</div>
 			<br />
-			<Link to="/test">
-				<button
-					onClick={e => {
-						actions.setQrText(
-							`https://api.qrserver.com/v1/create-qr-code/?data=${urlText}&amp;size=100x100urlText`
-						);
-						actions.setDrName(docName);
-					}}>
-					create qr
-				</button>
-			</Link>
-			<img src={store.qrText} alt="" style={{ height: "150px" }} />
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
+			<div className="row">
+				<div className="col-12 d-flex justify-content-center">
+					<Link to="/test">
+						<button
+							onClick={e => {
+								actions.setQrText(
+									`https://api.qrserver.com/v1/create-qr-code/?data=${urlText}&amp;size=100x100urlText`
+								);
+								actions.setDrName(docName);
+							}}>
+							create qr
+						</button>
+					</Link>
+				</div>
+			</div>
 		</div>
 	);
 };
