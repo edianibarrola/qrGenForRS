@@ -37,6 +37,7 @@ export const Demo = () => {
 				<div className="col-12 d-flex justify-content-center">
 					<Link to="/test">
 						<button
+							className="btn btn-primary"
 							onClick={e => {
 								actions.setQrText(
 									`https://api.qrserver.com/v1/create-qr-code/?data=${urlText}&amp;size=100x100urlText`

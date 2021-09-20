@@ -2,6 +2,15 @@
 /* 
     General Styles
 */
-html{
-    background:black;
+html *{
+    background:#feefeb;
+}
+body{
+    height: 100vh;
+}
+input {
+    background-color: #eaeef8;
+}
+button {
+    background-color: #ff838a;
 }
