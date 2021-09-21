@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import "../../styles/index.scss";
 // https://res.cloudinary.com/petrep/image/upload/v1631910403/realselfBG_fccsia.png
 const Canvas = props => {
 	const { store, actions } = useContext(Context);
